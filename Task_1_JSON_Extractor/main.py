@@ -19,7 +19,7 @@ from pydantic import BaseModel, ConfigDict, ValidationError
 # STEP 1: LOAD GEMINI API KEY
 # ==========================================
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 api_key = os.getenv("GEMINI_API_KEY")
 
@@ -95,7 +95,7 @@ Resume to analyze:
 # STEP 4: READ RESUME FILE
 # ==========================================
 
-input_file = Path("resume.txt")
+input_file = Path(__file__).resolve().parent / "resume.txt"
 
 if not input_file.exists():
     raise FileNotFoundError(
@@ -201,7 +201,7 @@ except ValidationError as e:
 # STEP 7: SAVE VALIDATED JSON
 # ==========================================
 
-output_file = Path("extracted_resume.json")
+output_file = Path(__file__).resolve().parent / "extracted_resume.json"
 
 output_file.write_text(
     validated_resume.model_dump_json(indent=2),
