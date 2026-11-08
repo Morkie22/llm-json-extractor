@@ -1,0 +1,14 @@
+{
+  "name": "Sarah Johnson",
+  "email": "sarah@example.com",
+  "phone": "",
+  "education": [],
+  "skills": [
+    "Microsoft Excel",
+    "Power BI",
+    "Python"
+  ],
+  "work_experience": [
+    "2021–2025: Project Coordinator at XYZ Solutions"
+  ]
+}
